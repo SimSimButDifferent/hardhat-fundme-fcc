@@ -1,7 +1,5 @@
 //function deployfunc() {}
 
-const { deployments } = require("hardhat")
-
 //module.exports.default = deployfunc
 
 const { networkConfig, developmentChains } = require("../helper-hardhat-config")
