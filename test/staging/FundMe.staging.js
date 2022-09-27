@@ -27,6 +27,5 @@ developmentChains.includes(network.name)
                       " should equal 0, running assert equal..."
               )
               assert.equal(endingFundMeBalance.toString(), "0")
-          done()
-          }).timeout(100000)
+          })
       })
