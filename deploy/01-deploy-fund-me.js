@@ -1,14 +1,12 @@
 //function deployfunc() {}
 
-const { deployments } = require("hardhat")
-
 //module.exports.default = deployfunc
 
 const { networkConfig, developmentChains } = require("../helper-hardhat-config")
 const { network } = require("hardhat")
 const { verify } = require("../utils/verify")
 
-module.exports = async ({ getNamedAccounts, deployment }) => {
+module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deploy, log } = deployments
     const { deployer } = await getNamedAccounts()
     const chainId = network.config.chainId
@@ -31,7 +29,7 @@ module.exports = async ({ getNamedAccounts, deployment }) => {
         from: deployer,
         args: [ethUsdPriceFeedAddress], //put pricefeed address
         log: true,
-        waitConfirmations: network.config.blockchainConfirmations || 1
+        waitConfirmations: network.config.blockConfirmations || 1
     })
 
     if (
